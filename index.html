@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Wins</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="orb" ></div>
+    <div class="orb-2" ></div>
+    <div class="orb-3" ></div>
+    <div class="orb-4" ></div>
+    <div class="orb-5" ></div>
+    <header><!-- top area -->
+        <h1>Little Wins</h1> <!-- project name -->
+        <p>Welcome to Little Wins, a place to celebrate small victories and achievements in everyday life.</p>
+        <br>
+        <p> You don't have to feel ready,you just have to take the first step.</p>
+        <br>
+        
+        
+        <button id="winButton">Add Win </button> <!-- will open the form -->
+        <div id="winFormContainer"> 
+            <form id="winForm">
+
+                <input
+                    type="text"
+                    id="winInput"
+                    name="winInput"
+                    placeholder="What did you accomplish today?"
+                    autocomplete="off"
+                    required
+                >
+
+                <button type="submit">Save Win ✦</button>
+
+            </form>
+        </div>
+        <div class="garden-teaser" id="gardenTeaser">
+            <span>🌱</span>
+            <span>Your garden awaits</span>
+            <span class="arrow">↓</span>
+        </div>
+    </header>
+    <main>
+        <section id="winsList">
+            <h2>Your Wins </h2>
+            <div id="winsContainer">
+            <!-- will store our wins here -->
+            </div>
+            <h2>🌿My Garden</h2>
+            <div id="garden"></div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

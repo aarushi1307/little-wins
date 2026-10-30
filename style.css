@@ -1,0 +1,403 @@
+*{
+    
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+body{
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #000000;
+    min-height: 100vh;
+}
+header{
+    
+    padding: 20px;
+    text-align: center;
+    
+}
+h1 {
+    margin-bottom: 15px;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 800;
+    letter-spacing: -3px;
+
+    background: linear-gradient(
+        90deg,
+        #6e0754c7,
+        #d9c7ff,
+        #ffffff
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow: 0 0 35px rgba(255, 255, 255, 0.15);
+
+    animation: titleFloat 4s ease-in-out infinite alternate;
+}
+
+@keyframes titleFloat {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-4px);
+    }
+}
+.tagline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    max-width: 700px;
+    margin: 0 auto 25px;
+
+    font-size: 18px;
+    line-height: 1.6;
+
+    color: rgba(255, 255, 255, 0.75);
+}
+button{
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #d7d6d677;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+}
+button:hover{
+    transform:translateY(-3px);
+
+}
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    min-height: auto;
+
+    padding: 50px 20px 80px;
+
+    position: relative;
+    z-index: 1;
+}
+h2 {
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #9cffb0,
+        #ffffff
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#winsList {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+#winsContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    width: 100%;
+    margin: 30px 0;
+}
+
+.orb{
+    width: 200px;
+    height: 140px;
+    border-radius: 50%;
+    background-color: rgba(168, 85, 247, 0.5);
+    position: fixed;
+    top: 100px;
+    filter: blur(20px);
+    right: 100px;
+    z-index: 0;
+    box-shadow: 0 0 80px 30px rgba(168, 85, 247, 0.35);
+    animation: float 10s ease-in-out infinite alternate; ;
+}
+@keyframes float { /* Define the keyframes for the floating animation */
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(100px,-50px);
+    }
+    
+}
+.orb-2{
+    width: 200px;
+    height: 140px;
+    border-radius: 50%;
+    background-color: rgba(21, 21, 149, 0.5);
+    position: fixed;
+    top: 300px;
+    filter: blur(20px);
+    bottom-left: 100px;
+    z-index: 0;
+    box-shadow: 0 0 80px 30px rgba(28, 16, 164, 0.35);
+    animation: float 10s ease-in-out infinite alternate; ;
+}
+.orb-3{
+    width: 200px;
+    height: 140px;
+    border-radius: 50%;
+    background-color: rgba(5, 97, 8, 0.847);
+    position: fixed;
+    top: 700px;
+    filter: blur(20px);
+    left: 100px;
+    z-index: 0;
+    box-shadow: 0 0 80px 30px rgba(3, 97, 5, 0.35);
+    animation: float 10s ease-in-out infinite alternate; ;
+}
+
+.orb-4{
+    width: 200px;
+    height: 140px;
+    border-radius: 50%;
+    background-color: rgba(255, 0, 0, 0.5);
+    position: fixed;
+    top: 500px;
+    filter: blur(20px);
+    right: 300px;
+    z-index: 0;
+    box-shadow: 0 0 80px 30px rgba(255, 0, 0, 0.35);
+    animation: float 10s ease-in-out infinite alternate; ;
+}
+.orb-5{
+    width: 200px;
+    height: 140px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 0, 0.5);
+    position: fixed;
+    top: 50px;
+    filter: blur(20px);
+    left: 300px;
+    z-index: 0;
+    box-shadow: 0 0 80px 30px rgba(255, 255, 0, 0.35);
+    animation: float 10s ease-in-out infinite alternate; ;
+}
+
+#winFormContainer {
+    margin-top: 18px;
+    display: none;
+}
+
+#winForm {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#winInput {
+    width: 300px;
+    padding: 13px 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+
+    font-size: 15px;
+
+    backdrop-filter: blur(10px);
+
+    transition: 0.25s ease;
+}
+
+#winInput::placeholder {
+    color: rgba(255, 255, 255, 0.45);
+}
+
+#winInput:focus {
+    border-color: rgba(210, 190, 255, 0.7);
+
+    box-shadow:
+        0 0 20px rgba(190, 160, 255, 0.15);
+
+    background: rgba(255, 255, 255, 0.11);
+}
+
+#winForm button {
+    padding: 13px 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.12);
+    color: white;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+#winForm button:hover {
+    transform: translateY(-2px);
+
+    background: rgba(255, 255, 255, 0.2);
+
+    box-shadow:
+        0 8px 25px rgba(255, 255, 255, 0.1);
+}
+
+#winsContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+.win-card {
+    min-height: 120px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 18px;
+
+    backdrop-filter: blur(10px);
+
+    transition: 0.3s ease;
+}
+.win-card p {
+    margin: 0 0 14px;
+    color: white;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.4;
+    text-align: center;
+}
+.win-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.12);
+}
+.win-card button{
+    margin-top:5px;
+    padding:4px 10px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+#winButton {
+    position: relative;
+
+    padding: 13px 27px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.10);
+    color: white;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(10px);
+
+    transition: all 0.3s ease;
+}
+
+#winButton::before {
+    content: "✦";
+    margin-right: 8px;
+}
+
+#winButton:hover {
+    transform: translateY(-4px) scale(1.03);
+
+    background: rgba(255, 255, 255, 0.17);
+
+    box-shadow:
+        0 10px 35px rgba(255, 255, 255, 0.12);
+}
+
+
+#winButton:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.08);
+}
+    
+#garden{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:100px;
+    margin-top:50px;
+}
+.garden-plant{
+    font-size:50px;
+    transition: 0.3s;
+    
+}
+.garden-plant:hover{
+    transform:scale(1.2);
+}
+.garden-teaser {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    margin: 35px auto 10px;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    font-size: 15px;
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.garden-teaser .arrow {
+    font-size: 20px;
+    animation: arrowMove 1.5s ease-in-out infinite;
+}
+
+.garden-teaser:hover {
+    color: white;
+    transform: translateY(3px);
+}
+
+@keyframes arrowMove {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(5px);
+    }
+}
